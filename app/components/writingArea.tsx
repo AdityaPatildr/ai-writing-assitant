@@ -37,13 +37,12 @@ export default function WritingArea({
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full p-4 ">
+      <div className="flex flex-col items-center justify-center h-full p-4 border border-[color:var(--accent)] rounded-xl">
         <form action="" className="w-full text-xl">
           <textarea
             ref={textareaRef}
-            className="w-full p-4 
-            bg-transparent
-             text-slate-100 rounded-lg border-none focus:outline-none resize-none overflow-hidden"
+            className="w-full p-4 bg-transparent text-[color:var(--text-light)]
+               rounded-lg border-none focus:outline-none resize-none overflow-hidden "
             value={text}
             onChange={handleChange}
             placeholder="Start typing..."
@@ -53,7 +52,8 @@ export default function WritingArea({
               <select
                 name="writingOptions"
                 id="writingOptions"
-                className=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                className=" border text-sm rounded-lg block w-full p-2.5 bg-[color:var(--accent)]
+                 border-[color:var(--text-dark)] placeholder-[color:var(--placeholder)] text-[color:var(--text-dark)] "
                 onChange={(e) => {
                   setSelectedOption(e.target.value);
                 }}
@@ -65,9 +65,9 @@ export default function WritingArea({
               </select>
             </div>
             <button
-              className={`text-white focus:outline-none focus:ring-4 focus:ring-black font-medium rounded-xl text-md px-3 py-2 text-center me-2 mb-2  ${
+              className={`text-[color:var(--text-light)] focus:outline-none focus:ring-2  focus:ring-[color:var(--text-dark)] font-medium rounded-xl text-md px-3 py-2 text-center me-2 mb-2  ${
                 isButtonenabled
-                  ? "bg-[color:var(--accent)] hover:bg-[color:var(--accent-hover)]"
+                  ? "bg-[color:var(--accent)] hover:bg-[color:var(--accent-hover)] border-[color:var(--text-dark)]"
                   : "cursor-not-allowed bg-slate-400"
               }`}
               type="submit"
@@ -80,7 +80,11 @@ export default function WritingArea({
             >
               <svg
                 className={`w-6 h-6
-                ${isButtonenabled ? "text-black" : `text-white`}`}
+                ${
+                  isButtonenabled
+                    ? " text-[color:var(--text-dark)]"
+                    : `text-[color:var(--text-light)]`
+                }`}
                 width="15"
                 height="15"
                 viewBox="0 0 15 15"
