@@ -21,7 +21,7 @@ export default function Navbar() {
 
         <div className="flex flex-col justify-between ">
           <div className="text-xl font-bold">BytterFly</div>
-          <div className="text-xs">Your AI Writing Assitant</div>
+          <div className="text-xs">Your AI Writing Assistant</div>
         </div>
       </div>
     </nav>
