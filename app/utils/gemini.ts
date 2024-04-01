@@ -5,7 +5,8 @@ const {
 } = require("@google/generative-ai");
 
 const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "AIzaSyAyuvpV7KLaQeNKQeJ_gUBrVDAWMevotoA";
+
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 type GeminiResponse = {
   outputText: string;
